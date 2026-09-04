@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DefineConstants>SERVER</DefineConstants>
+    <Platforms>AnyCPU;x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineConstants>$(DefineConstants);SERVER</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Linqdb\Linqdb.csproj" />
+    <ProjectReference Include="..\ServerClient\ServerClient.csproj" />
+    <ProjectReference Include="..\ServerLogic\ServerLogic.csproj" />
+  </ItemGroup>
+
+</Project>

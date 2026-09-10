@@ -6,11 +6,22 @@ simillarities to relational databases, namely tables, sql-style "select&#x20;
 from where" thinking.
 &#x20;   So why use it and when? 
 
-&#x20;   Linqdb is suitable when there are independent tables of data. In&#x20;
-such cases it's much easier to use than a relational database.&#x20;
-It is also an OLTP databases, although only per-table ACID (and only non-distributed table).&#x20;
-A simplest and easiest use-case is embedded db as an alternative to sqlite.
+&#x20;   Linqdb is OLTP database with focus on rapid development.&#x20;
+A simplest and easiest use-case is embedded db as an alternative to sqlite.&#x20;
+However, right now it still needs work to become real ACID OLTP db:
 
+-
+  &#x20;              Embedded db needs transaction support for partitioned tables.
+  &#x20;           
+-
+  &#x20;              Embedded db needs a way to read from more than one table within same data snapshot.
+  &#x20;           
+-
+  &#x20;              Single server case needs all of the above too.
+  &#x20;
+-
+  &#x20;              Distributed db needs support for distributed transactions and all of the above.
+  &#x20;               
 
 
 ### Creating new entities
